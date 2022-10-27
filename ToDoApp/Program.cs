@@ -6,7 +6,7 @@
         {
             TodoApp app = new();
 
-            Console.WriteLine("Напиши help чтобы увидеть команды");
+            MyClass.DoIt("Напиши help чтобы увидеть команды");
 
             Console.Write(">");
 
@@ -27,7 +27,7 @@
                     }
                     catch (FormatException)
                     {
-                        Console.WriteLine("Укажите номер готового элемента для пометки.");
+                        MyClass.DoIt("Укажите номер готового элемента для пометки.");
                     }
                 }
                 else if (inputLine.ToLower().Equals("clear"))
@@ -44,7 +44,7 @@
                 }
                 else
                 {
-                    Console.WriteLine("Команда не распознана, введите help, чтобы просмотреть все команды");
+                    MyClass.DoIt("Команда не распознана, введите help, чтобы просмотреть все команды");
                 }
                 Console.Write(">");
                 inputLine = Console.ReadLine();

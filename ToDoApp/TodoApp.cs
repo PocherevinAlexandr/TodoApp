@@ -68,7 +68,7 @@
             {
                 if (item.Number == number)
                 {
-                    Console.WriteLine("Выполнен " + item);
+                    MyClass.DoIt("Выполнен " + item);
                     found = true;
                     string a = item.ToString();
                     a = a.Substring(3);
@@ -82,9 +82,10 @@
                     }
                     else
                     {
-                        Console.WriteLine("Уже выполнено. Хотите отметить как не выполненое?");
-                        Console.WriteLine("Нажмите 'Y'");
-                        Console.WriteLine("Для отмены нажми 'N'");
+                        MyClass.DoIt("Уже выполнено. Хотите отметить как не выполненое?");
+
+                        MyClass.DoIt("Нажмите 'Y'");
+                        MyClass.DoIt("Для отмены нажми 'N'");
                         ConsoleKeyInfo cki;
                         cki = Console.ReadKey(true);
                         if (cki.Key == ConsoleKey.N)
@@ -105,7 +106,7 @@
             }
             if (!found)
             {
-                Console.WriteLine("Не удалось найти элемент с указанным номером");
+                MyClass.DoIt("Не удалось найти элемент с указанным номером");
             }
         }
 
@@ -113,7 +114,7 @@
         {
             if (items.Count == 0)
             {
-                Console.WriteLine("Задач нет");
+                MyClass.DoIt("Задач нет");
             }
             else
             {
@@ -131,7 +132,7 @@
 
         public void Help()
         {
-            Console.WriteLine(helpOutput);
+            MyClass.DoIt(helpOutput);
         }
     }
 }
