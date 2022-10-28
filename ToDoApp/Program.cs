@@ -6,11 +6,11 @@
         {
             TodoApp app = new();
 
-            MyClass.DoIt("Напиши help чтобы увидеть команды");
+            IO.Inference("Напиши help чтобы увидеть команды");
 
             Console.Write(">");
 
-            string inputLine = Console.ReadLine();
+            string inputLine = IO.Input();
             while (!inputLine.Equals("") && !inputLine.ToLower().Equals("exit"))
             {
                 if (inputLine.StartsWith("Add "))
@@ -27,7 +27,7 @@
                     }
                     catch (FormatException)
                     {
-                        MyClass.DoIt("Укажите номер готового элемента для пометки.");
+                        IO.Inference("Укажите номер готового элемента для пометки.");
                     }
                 }
                 else if (inputLine.ToLower().Equals("clear"))
@@ -44,10 +44,10 @@
                 }
                 else
                 {
-                    MyClass.DoIt("Команда не распознана, введите help, чтобы просмотреть все команды");
+                    IO.Inference("Команда не распознана, введите help, чтобы просмотреть все команды");
                 }
                 Console.Write(">");
-                inputLine = Console.ReadLine();
+                inputLine = IO.Input();
             }
         }
     }

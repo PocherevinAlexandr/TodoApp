@@ -57,7 +57,8 @@
             }
             TodoItem newItem = new(text, newNumber);
             items.Add(newItem);
-            Console.WriteLine(newItem);
+            string toString = newItem.ToString();
+            IO.Inference(toString);
             SaveItems();
         }
 
@@ -68,7 +69,7 @@
             {
                 if (item.Number == number)
                 {
-                    MyClass.DoIt("Выполнен " + item);
+                    IO.Inference("Выполнен " + item);
                     found = true;
                     string a = item.ToString();
                     a = a.Substring(3);
@@ -82,10 +83,10 @@
                     }
                     else
                     {
-                        MyClass.DoIt("Уже выполнено. Хотите отметить как не выполненое?");
+                        IO.Inference("Уже выполнено. Хотите отметить как не выполненое?");
 
-                        MyClass.DoIt("Нажмите 'Y'");
-                        MyClass.DoIt("Для отмены нажми 'N'");
+                        IO.Inference("Нажмите 'Y'");
+                        IO.Inference("Для отмены нажми 'N'");
                         ConsoleKeyInfo cki;
                         cki = Console.ReadKey(true);
                         if (cki.Key == ConsoleKey.N)
@@ -106,7 +107,7 @@
             }
             if (!found)
             {
-                MyClass.DoIt("Не удалось найти элемент с указанным номером");
+                IO.Inference("Не удалось найти элемент с указанным номером");
             }
         }
 
@@ -114,13 +115,14 @@
         {
             if (items.Count == 0)
             {
-                MyClass.DoIt("Задач нет");
+                IO.Inference("Задач нет");
             }
             else
             {
                 foreach (TodoItem item in items)
                 {
-                    Console.WriteLine(item);
+                    string toString = item.ToString();
+                    IO.Inference(toString);
                 }
             }
         }
@@ -132,7 +134,7 @@
 
         public void Help()
         {
-            MyClass.DoIt(helpOutput);
+            IO.Inference(helpOutput);
         }
     }
 }
