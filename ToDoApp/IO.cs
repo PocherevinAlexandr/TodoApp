@@ -4,7 +4,7 @@ namespace ToDoApp
 {
     public class IO
     {
-        public static void Inference(string sText)
+        public static void Exclusion(string sText)
         {
             Console.WriteLine(sText);
         }

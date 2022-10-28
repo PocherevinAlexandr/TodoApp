@@ -58,7 +58,7 @@
             TodoItem newItem = new(text, newNumber);
             items.Add(newItem);
             string toString = newItem.ToString();
-            IO.Inference(toString);
+            IO.Exclusion(toString);
             SaveItems();
         }
 
@@ -69,7 +69,7 @@
             {
                 if (item.Number == number)
                 {
-                    IO.Inference("Выполнен " + item);
+                    IO.Exclusion("Выполнен " + item);
                     found = true;
                     string a = item.ToString();
                     a = a.Substring(3);
@@ -83,10 +83,10 @@
                     }
                     else
                     {
-                        IO.Inference("Уже выполнено. Хотите отметить как не выполненое?");
+                        IO.Exclusion("Уже выполнено. Хотите отметить как не выполненое?");
 
-                        IO.Inference("Нажмите 'Y'");
-                        IO.Inference("Для отмены нажми 'N'");
+                        IO.Exclusion("Нажмите 'Y'");
+                        IO.Exclusion("Для отмены нажми 'N'");
                         ConsoleKeyInfo cki;
                         cki = Console.ReadKey(true);
                         if (cki.Key == ConsoleKey.N)
@@ -107,7 +107,7 @@
             }
             if (!found)
             {
-                IO.Inference("Не удалось найти элемент с указанным номером");
+                IO.Exclusion("Не удалось найти элемент с указанным номером");
             }
         }
 
@@ -115,14 +115,14 @@
         {
             if (items.Count == 0)
             {
-                IO.Inference("Задач нет");
+                IO.Exclusion("Задач нет");
             }
             else
             {
                 foreach (TodoItem item in items)
                 {
                     string toString = item.ToString();
-                    IO.Inference(toString);
+                    IO.Exclusion(toString);
                 }
             }
         }
@@ -134,7 +134,7 @@
 
         public void Help()
         {
-            IO.Inference(helpOutput);
+            IO.Exclusion(helpOutput);
         }
     }
 }
